@@ -79,7 +79,7 @@ export const DEFAULT_HERITAGE_SITES: HeritageSite[] = [
     category: 'Archeological',
     latitude: 16.778654318978944,
     longitude: 96.16472900873727,
-    imageUrl:'https://raw.githubusercontent.com/CalcxyZ/Yangon_Heritages_/main/src/assets/Musmeah.jpg',
+    imageUrl:'https://raw.githubusercontent.com/CalcxyZ/Yangon_Heritages_/main/src/assets/saintmary.jpg',
     locationName: 'Botahtaung Township, Yangon',
     createdAt: new Date('2026-01-07').toISOString(),
   },
