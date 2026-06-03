@@ -1,0 +1,97 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import { HeritageSite } from '../types';
+
+export const DEFAULT_HERITAGE_SITES: HeritageSite[] = [
+  {
+    id: 'shwedagon-pagoda',
+    name: 'Shwedagon Pagoda',
+    description: 'A 99-meter tall golden pagoda that dominates the city skyline. It is the most sacred Buddhist pagoda in Myanmar, believed to contain relics of the four previous Buddhas, dating back over 2,500 years.',
+    category: 'Cultural',
+    latitude: 16.7983,
+    longitude: 96.1497,
+    imageUrl: 'https://images.unsplash.com/photo-1546182990-dffeafbe841d?w=800&auto=format&fit=crop&q=60',
+    locationName: 'Dagon Township, Yangon',
+    createdAt: new Date('2026-01-01').toISOString(),
+  },
+  {
+    id: 'sule-pagoda',
+    name: 'Sule Pagoda',
+    description: 'An ancient octagonal golden pagoda located at the absolute commercial and political center of Yangon. Serves as a vital focal point for local civic gatherings and historical milestones.',
+    category: 'Historic',
+    latitude: 16.7744,
+    longitude: 96.1589,
+    imageUrl: 'https://images.unsplash.com/photo-1627894236081-39ed24058c97?w=800&auto=format&fit=crop&q=60',
+    locationName: 'Kyauktada Township, Yangon',
+    createdAt: new Date('2026-01-02').toISOString(),
+  },
+  {
+    id: 'the-secretariat',
+    name: 'The Secretariat (Yangon)',
+    description: 'A massive, gorgeous colonial-era Victorian red-brick building, formerly known as the Ministers\' Building. It is the national historical site where General Aung San (father of modern Myanmar) was assassinated in 1947.',
+    category: 'Historic',
+    latitude: 16.7788,
+    longitude: 96.1664,
+    imageUrl: 'https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?w=800&auto=format&fit=crop&q=60',
+    locationName: 'Botahtaung Township, Yangon',
+    createdAt: new Date('2026-01-03').toISOString(),
+  },
+  {
+    id: 'bogyoke-market',
+    name: 'Bogyoke Aung San Market',
+    description: 'Built in 1926 under British administration, this famous historic covered bazaar features charming colonial architecture and cobblestone streets, housing hundreds of shops for gems, jade, and traditional fabrics.',
+    category: 'Cultural',
+    latitude: 16.7801,
+    longitude: 96.1558,
+    imageUrl: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop&q=60',
+    locationName: 'Pabedan Township, Yangon',
+    createdAt: new Date('2026-01-04').toISOString(),
+  },
+  {
+    id: 'chaukhtatgyi-temple',
+    name: 'Chaukhtatgyi Reclining Buddha',
+    description: 'A highly revered temple home to one of the most beautiful and largest reclining Buddha statues in Southeast Asia. Spans 66 meters long and features 108 auspicious symbols meticulously painted on its feet.',
+    category: 'Cultural',
+    latitude: 16.8066,
+    longitude: 96.1543,
+    imageUrl: 'https://images.unsplash.com/photo-1590001155093-a3c66ab0c3ff?w=800&auto=format&fit=crop&q=60',
+    locationName: 'Bahan Township, Yangon',
+    createdAt: new Date('2026-01-05').toISOString(),
+  },
+  {
+    id: 'yangon-high-court',
+    name: 'Yangon Region High Court Building',
+    description: 'Designed by British Architect John Clague and completed in 1911, this outstanding red-brick Queen Anne style architectural monument features a majestic clock tower situated right next to Maha Bandula Garden.',
+    category: 'Historic',
+    latitude: 16.7731,
+    longitude: 96.1594,
+    imageUrl: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&auto=format&fit=crop&q=60',
+    locationName: 'Kyauktada Township, Yangon',
+    createdAt: new Date('2026-01-06').toISOString(),
+  },
+  {
+    id: 'musmeah-yeshua',
+    name: 'Musmeah Yeshua Synagogue',
+    description: 'The last surviving synagogue in Myanmar, beautifully maintained by a small Jewish family in downtown Yangon. Built in 1896, it stands as an architectural testament to Yangon\'s ancient multi-faith heritage.',
+    category: 'Archeological',
+    latitude: 16.7761,
+    longitude: 96.1553,
+    imageUrl: 'https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&auto=format&fit=crop&q=60',
+    locationName: 'Pabedan Township, Yangon',
+    createdAt: new Date('2026-01-07').toISOString(),
+  },
+  {
+    id: 'kandawgyi-lake',
+    name: 'Kandawgyi Lake & Karaweik Barge',
+    description: 'An elegant artificial body of water built in colonial times, featuring a wooden lakeside boardwalk and the iconic twin-mythical-bird floating golden Karaweik palace pavilion showing traditional fine arts.',
+    category: 'Natural',
+    latitude: 16.7943,
+    longitude: 96.1601,
+    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=60',
+    locationName: 'Bahan Township, Yangon',
+    createdAt: new Date('2026-01-08').toISOString(),
+  }
+];

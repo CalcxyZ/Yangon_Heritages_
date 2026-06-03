@@ -1,0 +1,63 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global Safety Net default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(existingData) {
+      return isSignedIn() && (
+        (existingData.keys().hasAll(['authorId']) && existingData.authorId == request.auth.uid) ||
+        !existingData.keys().hasAll(['authorId'])
+      );
+    }
+
+    function isValidHeritageSite(data) {
+      return data.id is string && data.id.size() <= 128
+          && data.name is string && data.name.size() <= 200
+          && data.description is string && data.description.size() <= 5000
+          && data.category is string && (data.category == 'Historic' || data.category == 'Cultural' || data.category == 'Natural' || data.category == 'Archeological')
+          && data.latitude is number && data.latitude >= -90.0 && data.latitude <= 90.0
+          && data.longitude is number && data.longitude >= -180.0 && data.longitude <= 180.0
+          && data.imageUrl is string && data.imageUrl.size() <= 2048
+          && data.locationName is string && data.locationName.size() <= 200
+          && data.createdAt is string;
+    }
+
+    match /heritage_sites/{siteId} {
+      // Anyone can read heritage sites to view on the map and lists
+      allow read: if true;
+
+      // Only registered curators/admins can write
+      allow create: if isSignedIn() 
+                    && isValidId(siteId) 
+                    && isValidHeritageSite(request.resource.data)
+                    && (
+                      !request.resource.data.keys().hasAll(['authorId']) || 
+                      request.resource.data.authorId == request.auth.uid
+                    );
+
+      allow update: if isSignedIn()
+                    && isValidId(siteId)
+                    && isValidHeritageSite(request.resource.data)
+                    && isOwner(resource.data)
+                    && (
+                      !request.resource.data.keys().hasAll(['createdAt']) ||
+                      request.resource.data.createdAt == resource.data.createdAt
+                    );
+
+      allow delete: if isSignedIn() 
+                    && isOwner(resource.data);
+    }
+  }
+}

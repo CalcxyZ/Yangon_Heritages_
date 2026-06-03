@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "HeritageSite": {
+      "title": "HeritageSite",
+      "description": "Represents a single registered heritage landmark",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the heritage site"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the heritage landmark"
+        },
+        "description": {
+          "type": "string",
+          "description": "A descriptive overview of the site's rich history"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["Historic", "Cultural", "Natural", "Archeological"],
+          "description": "Typology of the heritage resource"
+        },
+        "latitude": {
+          "type": "number",
+          "description": "WGS-84 coordinate system latitude"
+        },
+        "longitude": {
+          "type": "number",
+          "description": "WGS-84 coordinate system longitude"
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "Fully qualified web URL to representative media file"
+        },
+        "locationName": {
+          "type": "string",
+          "description": "Named geographic location (e.g., city, state, or country)"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Immutable client/server record timestamp"
+        },
+        "authorId": {
+          "type": "string",
+          "description": "User identifier who created and curated this record"
+        }
+      },
+      "required": ["id", "name", "description", "category", "latitude", "longitude", "imageUrl", "locationName", "createdAt"]
+    }
+  },
+  "firestore": {
+    "heritage_sites/{siteId}": {
+      "schema": "HeritageSite",
+      "description": "A flat public directory of user-curated global heritage landmarks"
+    }
+  }
+}
