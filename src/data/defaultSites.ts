@@ -13,7 +13,7 @@ export const DEFAULT_HERITAGE_SITES: HeritageSite[] = [
     category: 'Cultural',
     latitude: 16.7983,
     longitude: 96.1497,
-    imageUrl: 'src/assets/Shwedagon.jpg',
+    imageUrl: 'Yangon_Heritages_/src/assets/Shwedagon.jpg',
     locationName: 'Dagon Township, Yangon',
     createdAt: new Date('2026-01-01').toISOString(),
   },
